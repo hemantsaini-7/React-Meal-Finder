@@ -1,0 +1,17 @@
+.items {
+  margin: 100px;
+  list-style: none;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.item {
+  border: 6px solid #fff;
+  background-color: burlywood;
+}
+@media (max-width: 768px) {
+  .items {
+    grid-template-columns: 1fr;
+  }
+}
