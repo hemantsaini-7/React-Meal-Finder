@@ -10,21 +10,33 @@ class header extends Component {
     };
   }
 
-  clickHandle = () => {
-    this.setState({});
+  onClick = (e) => {
+    this.setState({
+      text: e.target.value,
+    });
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(this.state.text);
+
+    this.setState({
+      text: " ",
+    });
   };
 
   render() {
     return (
       <div className='header'>
         <h1 className='heading'>Meal Finder</h1>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <input
             type='text'
             placeholder='Search The Meal..!!'
             className='search-field'
             value={this.state.text}
-            onChange={this.clickHandle}
+            onChange={this.onClick}
           />
           <input type='submit' value='Search' className='search-btn' />
         </form>
