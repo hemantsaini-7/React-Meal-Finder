@@ -1,40 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import "./../Styles/content.css";
-import axios from "axios";
 
-class Content extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      meals: [],
-      err: "",
-    };
-  }
-
-  componentDidMount() {
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
-      .then((res) => {
-        console.log(res.data);
-        this.setState({
-          meals: res.data,
-        });
-      })
-      .catch((err) => {
-        this.setState({
-          err: "Something went wrong..!!",
-        });
-      });
-  }
-  render() {
-    return (
-      <div>
-        {this.state.meals.map((meal) => (
-          <div key={meal.id}>{meal.strMeal}</div>
-        ))}
-      </div>
-    );
-  }
+function Content(props) {
+  return (
+    <div className='items'>
+      {props.meals.map((meal) => (
+        <div className='item' key={meal.idMeal}>
+          <h1 className='head'>{meal.strMeal}</h1>
+          <img src={meal.strMealThumb} className='img-style' alt='MainImg' />
+          <div>
+            <h1 className='instr-head'>Instructions</h1>
+            <p className='instructions'>{meal.strInstructions}</p>
+          </div>
+          <a
+            href={meal.strSource}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='video-link'
+          >
+            Video Source
+          </a>
+        </div>
+      ))}
+    </div>
+  );
 }
+
 export default Content;

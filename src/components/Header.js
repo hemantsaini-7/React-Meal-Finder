@@ -18,12 +18,7 @@ class header extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-
-    console.log(this.state.text);
-
-    this.setState({
-      text: " ",
-    });
+    this.props.searchMeal(this.state.text);
   };
 
   render() {
