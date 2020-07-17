@@ -1,10 +1,7 @@
 ## About Project: 
-An React UI using a third party API and fetching the results and display the HTML with some good CSS effects through ReactJS.
-A Multi Components based project having the Extracted data from the API component and the display DOM component.
-
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* An React UI using a third party API and fetching the results and display the HTML with some good CSS effects through ReactJS.
+* A Multi Components based project having the Extracted data from the API component and the display DOM component.
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
